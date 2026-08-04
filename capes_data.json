@@ -6663,8 +6663,8 @@
    "sigla": "BigDataSE",
    "name": "IEEE International Conference On Big Data Science",
    "estrato": "A1",
-   "submission": null,
-   "event_date": null,
+   "submission": "Janeiro",
+   "event_date": "Dezembro",
    "areas": [
     "Engineering"
    ],
