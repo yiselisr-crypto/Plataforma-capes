@@ -15,7 +15,7 @@
 <body>
   <main class="container">
     <header class="masthead">
-      <div class="eyebrow">Procedimento 2 · Computação 2025–2028</div>
+      <div class="eyebrow">Procedure 2 · Computer Science 2025–2028</div>
       <h1>CAPES Metrics</h1>
       <p class="sub">QUALIS classification of scientific journals and conferences, by research area.</p>
     </header>
@@ -33,6 +33,7 @@
       <button class="tab active" role="tab" aria-selected="true" aria-controls="journals-panel" data-tab="journals-panel">Journals</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="conferences-panel" data-tab="conferences-panel">Conferences</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="overview-panel" data-tab="overview-panel">Overview</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="flowcharts-panel" data-tab="flowcharts-panel">Flowcharts</button>
     </nav>
 
     <section id="journals-panel" class="tab-panel active" role="tabpanel">
@@ -114,8 +115,83 @@
       <div class="chart-grid"><div id="journal-areas" class="chart"></div><div id="conference-areas" class="chart"></div></div>
       <article class="explanation">
         <h2>How estratos are assigned</h2>
-        <p>For <strong>journals</strong>, the estrato shown is the one computed from the Scopus highest-category percentile, following the CAPES Procedimento 2 bands (A1 ≥ 87.5%, A2 ≥ 75%, A3 ≥ 62.5%, A4 ≥ 50%, A5 ≥ 37.5%, A6 ≥ 25%, A7 ≥ 12.5%, A8 &lt; 12.5%). For <strong>conferences</strong>, the estrato comes from the curated CE-SBC classification (H5-index based, with Top10/Top20 adjustment).</p>
+        <p>For <strong>journals</strong>, the estrato shown is the one computed from the Scopus highest-category percentile, following the CAPES Procedure 2 bands (A1 ≥ 87.5%, A2 ≥ 75%, A3 ≥ 62.5%, A4 ≥ 50%, A5 ≥ 37.5%, A6 ≥ 25%, A7 ≥ 12.5%, A8 &lt; 12.5%). For <strong>conferences</strong>, the estrato comes from the curated CE-SBC classification (H5-index based, with Top10/Top20 adjustment).</p>
       </article>
+    </section>
+
+    <section id="flowcharts-panel" class="tab-panel flow-guide" role="tabpanel" aria-label="CAPES Flowcharts" lang="en" hidden>
+      <header class="guide-heading">
+        <div class="eyebrow">Computer Science · Cycle 2025–2028</div>
+        <h2>CAPES Flowcharts</h2>
+        <p>Procedure 2: from collecting indicators to assigning a rating.</p>
+      </header>
+      <nav class="guide-links" aria-label="Flowchart sections">
+        <a href="#flow-summary">Summary</a><a href="#flow-journals">Journals</a><a href="#flow-events">Conferences</a><a href="#flow-metrics">Metrics</a><a href="#flow-concept">Rating</a>
+      </nav>
+      <section id="flow-summary" class="guide-section">
+        <div class="eyebrow">01 / Summary</div><h2>The evaluation process</h2>
+        <p class="guide-intro">Indirect classification by publication venue + direct classification by the article's FWCI.</p>
+        <ol class="process-flow"><li><span>01</span>Collect indicators</li><li><span>02</span>Classify venues</li><li><span>03</span>Assign article tiers</li><li><span>04</span>Apply FWCI adjustment (5%)</li><li><span>05</span>Select 4N + M</li><li><span>06</span>Calculate metrics</li><li><span>07</span>Assign rating</li></ol>
+        <div class="source-grid">
+          <article><h3>Scopus</h3><p>Journal percentiles</p></article>
+          <article><h3>Web of Science</h3><p>JCR / percentile</p></article>
+          <article><h3>Google Scholar</h3><p>Conference H5-index</p></article>
+          <article><h3>CE-SBC</h3><p>Top 10 and Top 20</p></article>
+          <article><h3>COPE</h3><p>List of predatory publishers</p></article>
+        </div>
+        <aside class="guide-note"><h3>Key points</h3><ul>
+          <li><strong>N</strong> = average number of permanent faculty members (excluding PPJ and PPS).</li>
+          <li><strong>4N</strong> = number of selected bibliographic outputs.</li>
+          <li><strong>M</strong> = max(10, N/4) = number of technical outputs.</li>
+          <li><strong>FWCI</strong>: the top 5% of articles by impact move up one tier.</li>
+        </ul></aside>
+      </section>
+      <section id="flow-journals" class="guide-section">
+        <div class="eyebrow">02 / Journals</div><h2>From ISSN to final tier</h2>
+        <p class="guide-path">ISSN → Find percentiles → MAX(Scopus, WoS) → Base tier → SBC adjustment → Final</p>
+        <div class="guide-grid">
+          <div class="table-wrap"><table><caption>Percentile table</caption><thead><tr><th scope="col">Tier</th><th scope="col">Percentile</th><th scope="col">Band</th></tr></thead><tbody><tr><th scope="row">A1</th><td>≥ 87.5</td><td>Top 12.5%</td></tr><tr><th scope="row">A2</th><td>≥ 75.0</td><td>Top 25%</td></tr><tr><th scope="row">A3</th><td>≥ 62.5</td><td>Top 37.5%</td></tr><tr><th scope="row">A4</th><td>≥ 50.0</td><td>Top 50%</td></tr><tr><th scope="row">A5</th><td>≥ 37.5</td><td>Top 62.5%</td></tr><tr><th scope="row">A6</th><td>≥ 25.0</td><td>Top 75%</td></tr><tr><th scope="row">A7</th><td>≥ 12.5</td><td>Top 87.5%</td></tr><tr><th scope="row">A8</th><td>&lt; 12.5</td><td>Bottom</td></tr></tbody></table></div>
+          <div class="guide-stack">
+            <article class="guide-card"><h3>SBC adjustment</h3><p>Journals published by SBC can move up <strong>up to 2 tiers</strong>.</p><p class="caption">E.g.: A6 → A4; A4 → A2.</p></article>
+            <article class="guide-card"><h3>COPE exclusion</h3><p>Publishers on the COPE predatory list are excluded.</p><a href="https://publicationethics.org/" target="_blank" rel="noopener noreferrer">publicationethics.org ↗</a></article>
+            <article class="guide-card"><h3>Calculation</h3><code>percentile = MAX(Scopus, WoS)</code></article>
+          </div>
+        </div>
+      </section>
+      <section id="flow-events" class="guide-section">
+        <div class="eyebrow">03 / Conferences</div><h2>Two-stage classification</h2>
+        <p class="guide-path">H5-index → CE-SBC adjustment → Tier cap → Development incentive</p>
+        <div class="guide-grid">
+          <div class="table-wrap"><table><caption>Stage 1 · H5-index</caption><thead><tr><th scope="col">Tier</th><th scope="col">Minimum H5</th></tr></thead><tbody><tr><th scope="row">A1</th><td>≥ 35</td></tr><tr><th scope="row">A2</th><td>≥ 25</td></tr><tr><th scope="row">A3</th><td>≥ 20</td></tr><tr><th scope="row">A4</th><td>≥ 15</td></tr><tr><th scope="row">A5</th><td>≥ 12</td></tr><tr><th scope="row">A6</th><td>≥ 9</td></tr><tr><th scope="row">A7</th><td>≥ 6</td></tr><tr><th scope="row">A8</th><td>&gt; 0</td></tr></tbody></table></div>
+          <div class="guide-stack">
+            <article class="guide-card"><h3>Stage 2 · CE-SBC</h3><dl class="guide-definitions"><div><dt>Top 10</dt><dd>+2 tiers</dd></div><div><dt>Top 20</dt><dd>+1 tier</dd></div><div><dt>Relevant</dt><dd>Unchanged</dd></div></dl></article>
+            <article class="guide-card"><h3>Tier cap</h3><p>Qualitative adjustments are capped at A3.</p></article>
+            <article class="guide-card"><h3>SBC development incentive</h3><ul><li>≥ 20 years of history → minimum A4.</li><li>≥ 10 years of history → minimum A5.</li></ul></article>
+          </div>
+        </div>
+      </section>
+      <section id="flow-metrics" class="guide-section">
+        <div class="eyebrow">04 / Metrics</div><h2>Output selection and weighting</h2>
+        <div class="guide-grid guide-thirds">
+          <article class="guide-card"><h3>Parameters</h3><p><strong>N</strong> = average number of permanent faculty members (excluding PPJ and PPS).</p><p><strong>M</strong> = max(10, N/4).</p><p><strong>4N</strong> = bibliographic output limit.</p></article>
+          <article class="guide-card"><h3>4N selection</h3><ul><li>Top 4N articles</li><li>Books (L1, L2, L3)</li><li>Book chapters (CL1)</li></ul></article>
+          <article class="guide-card"><h3>M selection</h3><ul><li>Top M technical outputs</li><li>Tiers T1, T2 and T3</li></ul></article>
+        </div>
+        <div class="formula-card"><h3>Bibliographic output</h3><p><code>ProdBib = #A1×1.000 + #A2×0.875 + #A3×0.750 + #A4×0.625<br>+ #L1×1.0 + #L2×0.8 + #L3×0.6 + #CL1×0.5</code></p><h3>Technical output</h3><p><code>ProdTec = #T1×1.0 + #T2×0.8 + #T3×0.6</code></p><h3>Weighting</h3><p><code>Weighted score = Total / N</code></p></div>
+        <div class="table-wrap"><table><caption>Weight table</caption><thead><tr><th scope="col">Type</th><th scope="col">Level 1</th><th scope="col">Level 2</th><th scope="col">Level 3</th><th scope="col">Level 4</th></tr></thead><tbody>
+          <tr><th scope="row">Articles</th><td>A1: 1.000</td><td>A2: 0.875</td><td>A3: 0.750</td><td>A4: 0.625</td></tr>
+          <tr><th scope="row">Books</th><td>L1: 1.0</td><td>L2: 0.8</td><td>L3: 0.6</td><td>—</td></tr>
+          <tr><th scope="row">Book chapters</th><td>CL1: 0.5</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><th scope="row">Technical outputs</th><td>T1: 1.0</td><td>T2: 0.8</td><td>T3: 0.6</td><td>—</td></tr>
+        </tbody></table></div>
+      </section>
+      <section id="flow-concept" class="guide-section">
+        <div class="eyebrow">05 / Rating</div><h2>Ranking-based rating</h2>
+        <p class="guide-intro">Comparison with all programs in the field using weighted bibliographic output (ProdBib_ponderada).</p>
+        <ol class="concept-list" aria-label="Rating bands"><li><span class="concept-code">MB</span><div><strong>Very Good</strong><p>Programs of excellence</p></div><span class="concept-band">Top 20%</span></li><li><span class="concept-code">B</span><div><strong>Good</strong><p>Above the median</p></div><span class="concept-band">20%–50%</span></li><li><span class="concept-code">R</span><div><strong>Fair</strong><p>Close to the median</p></div><span class="concept-band">50%–70%</span></li><li><span class="concept-code">F</span><div><strong>Weak</strong><p>Below the median</p></div><span class="concept-band">70%–90%</span></li><li><span class="concept-code">I</span><div><strong>Insufficient</strong><p>Urgent improvement needed</p></div><span class="concept-band">Bottom 10%</span></li></ol>
+        <aside class="guide-note"><h3>Qualitative adjustment</h3><p>The base rating may be adjusted by the evaluation field based on:</p><ul><li>Relevant technical output</li><li>Balanced distribution among faculty members</li><li>Student participation in outputs</li><li>Consistent output throughout the four-year period</li></ul></aside>
+      </section>
+      <p class="caption">Procedure 2 guide · Computer Science 2025–2028, based on the supplied material. Classifications in the site's tables reflect the available dataset.</p>
     </section>
   </main>
 </body>
